@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by georgestoica on 15/7/16.
  */
 public class LogProcessingMessage {
-    public static class Scan implements Serializable {
+    public static class Scan implements Message {
         private String dirPath;
 
         public Scan(String dirPath) {
@@ -18,7 +18,7 @@ public class LogProcessingMessage {
         }
     }
 
-    public static class Parse implements Serializable {
+    public static class Parse implements Message {
         private String fileName;
         public Parse(String fileName) {
             this.fileName = fileName;
@@ -29,7 +29,7 @@ public class LogProcessingMessage {
         }
     }
 
-    public static class LogDetails implements Serializable {
+    public static class LogDetails implements Message {
         private int lineCount;
         private String fileName;
 
@@ -47,7 +47,7 @@ public class LogProcessingMessage {
         }
     }
 
-    public static class StartOfFile implements Serializable {
+    public static class StartOfFile implements Message {
         private String fileName;
 
         public StartOfFile(String fileName) {
@@ -59,19 +59,24 @@ public class LogProcessingMessage {
         }
     }
 
-    public static class Line implements Serializable {
-        private int number;
-
-        public Line(int number) {
-            this.number = number;
+    public static class Line implements Message {
+        private String fileName;
+        public Line(String fileName) {
+            this.fileName = fileName;
         }
 
-        public int getLineNumber() {
-            return number;
+        public String getFileName() {
+            return fileName;
         }
     }
+    public static class EndOfFile implements Message {
+        private String fileName;
+        public EndOfFile(String fileName) {
+            this.fileName = fileName;
+        }
 
-    public static class EndOfFile implements Serializable {
-
+        public String getFileName() {
+            return fileName;
+        }
     }
 }
