@@ -7,14 +7,14 @@ import java.io.Serializable;
  */
 public class LogProcessingMessage {
     public static class Scan implements Message {
-        private String dirPath;
+        private String fileName;
 
-        public Scan(String dirPath) {
-            this.dirPath = dirPath;
+        public Scan(String fileName) {
+            this.fileName = fileName;
         }
 
-        public String getDirPath() {
-            return dirPath;
+        public String getFileName() {
+            return fileName;
         }
     }
 

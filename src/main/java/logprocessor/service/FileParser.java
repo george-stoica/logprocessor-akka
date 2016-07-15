@@ -2,6 +2,7 @@ package logprocessor.service;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
+import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import logprocessor.message.LogProcessingMessage;
 import logprocessor.message.Message;
@@ -15,6 +16,14 @@ import scala.runtime.BoxedUnit;
  */
 public class FileParser extends AbstractActor {
     private String fileToParse;
+
+    static Props props(String fileToParse) {
+        return Props.create(FileParser.class, () -> new FileParser(fileToParse));
+    }
+
+    public FileParser(String fileToParse) {
+        this.fileToParse = fileToParse;
+    }
 
     public PartialFunction<Object, BoxedUnit> receive() {
         return ReceiveBuilder.match(LogProcessingMessage.Parse.class, message -> {
