@@ -39,6 +39,9 @@ public class FileParser extends AbstractActor {
                 // send data to aggregator
                 ActorRef aggregator = context().actorOf(Aggregator.props(), "aggregator");
                 aggregator.tell(parseEventMessage, self());
+
+                // shut down actor
+                context().stop(self());
             });
 
         }).build();
