@@ -125,3 +125,64 @@
 2016-07-17 13:52:54 DEBUG LogFileParser:29 - Finished parsing /Users/munca/akka_tests/log2.txt
 2016-07-17 13:52:55 DEBUG FileScanner:37 - Removed Actor[akka://LogProcessor/user/fileScanner/$b#-1837965204] from monitor
 2016-07-17 13:52:55 DEBUG FileScanner:42 - Cleanup...
+2016-07-17 14:02:54 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:02:54 DEBUG LogProcessor:27 - creating actor system...
+2016-07-17 14:02:55 DEBUG LogProcessor:31 - creating file scanner...
+2016-07-17 14:02:55 DEBUG LogProcessor:35 - creating file aggregator...
+2016-07-17 14:02:55 DEBUG LogProcessor:38 - creating monitor...
+2016-07-17 14:02:55 DEBUG LogProcessor:44 - start scanning for log files...
+2016-07-17 14:02:55 DEBUG FileScanner:30 - Scan request for /Users/munca/akka_tests
+2016-07-17 14:02:55 DEBUG FileScanner:41 - Start parsing file: log1.txt
+2016-07-17 14:02:55 DEBUG FileScanner:41 - Start parsing file: log2.txt
+2016-07-17 14:02:55 DEBUG FileParser:45 - Parse message received for /Users/munca/akka_tests/log1.txt
+2016-07-17 14:02:55 DEBUG FileParser:45 - Parse message received for /Users/munca/akka_tests/log2.txt
+2016-07-17 14:02:55 DEBUG LogFileParser:19 - Start parsing file: /Users/munca/akka_tests/log1.txt
+2016-07-17 14:02:55 DEBUG Aggregator:29 - Start aggregating data from /Users/munca/akka_tests/log1.txt
+2016-07-17 14:02:55 DEBUG LogFileParser:19 - Start parsing file: /Users/munca/akka_tests/log2.txt
+2016-07-17 14:02:55 DEBUG Aggregator:29 - Start aggregating data from /Users/munca/akka_tests/log2.txt
+2016-07-17 14:02:55 DEBUG FileScanner:31 - Start monitoring Actor[akka://LogProcessor/user/fileScanner/$b#252102238]
+2016-07-17 14:02:55 DEBUG FileScanner:31 - Start monitoring Actor[akka://LogProcessor/user/fileScanner/$a#-24405569]
+2016-07-17 14:02:55 DEBUG FileParser:59 - Finished parsing /Users/munca/akka_tests/log1.txt. Cleanup
+2016-07-17 14:02:55 DEBUG LogFileParser:29 - Finished parsing /Users/munca/akka_tests/log1.txt
+2016-07-17 14:02:55 DEBUG Aggregator:37 - Final data from /Users/munca/akka_tests/log1.txt: 5 lines
+2016-07-17 14:02:55 DEBUG FileParser:59 - Finished parsing /Users/munca/akka_tests/log2.txt. Cleanup
+2016-07-17 14:02:55 DEBUG LogFileParser:29 - Finished parsing /Users/munca/akka_tests/log2.txt
+2016-07-17 14:02:55 DEBUG Aggregator:37 - Final data from /Users/munca/akka_tests/log2.txt: 7 lines
+2016-07-17 14:02:55 DEBUG FileScanner:37 - Removed Actor[akka://LogProcessor/user/fileScanner/$a#-24405569] from monitor
+2016-07-17 14:02:55 DEBUG FileScanner:37 - Removed Actor[akka://LogProcessor/user/fileScanner/$b#252102238] from monitor
+2016-07-17 14:02:55 DEBUG FileScanner:42 - Cleanup...
+2016-07-17 14:11:54 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:11:54 DEBUG LogProcessor:27 - creating actor system...
+2016-07-17 14:11:55 DEBUG LogProcessor:31 - creating file scanner...
+2016-07-17 14:11:55 DEBUG LogProcessor:35 - creating file aggregator...
+2016-07-17 14:11:55 DEBUG LogProcessor:38 - creating monitor...
+2016-07-17 14:11:55 DEBUG LogProcessor:44 - start scanning for log files...
+2016-07-17 14:11:55 DEBUG FileScanner:30 - Scan request for /Users/munca/akka_tests
+2016-07-17 14:11:55 DEBUG FileScanner:41 - Start parsing file: log1.txt
+2016-07-17 14:11:55 DEBUG FileScanner:41 - Start parsing file: log2.txt
+2016-07-17 14:11:55 DEBUG FileParser:45 - Parse message received for /Users/munca/akka_tests/log2.txt
+2016-07-17 14:11:55 DEBUG FileParser:45 - Parse message received for /Users/munca/akka_tests/log1.txt
+2016-07-17 14:11:55 DEBUG FileScanner:31 - Start monitoring Actor[akka://LogProcessor/user/fileScanner/$b#583438089]
+2016-07-17 14:11:55 DEBUG FileScanner:31 - Start monitoring Actor[akka://LogProcessor/user/fileScanner/$a#1268813911]
+2016-07-17 14:11:55 DEBUG LogFileParser:19 - Start parsing file: /Users/munca/akka_tests/log2.txt
+2016-07-17 14:11:55 DEBUG Aggregator:29 - Start aggregating data from /Users/munca/akka_tests/log2.txt
+2016-07-17 14:11:55 DEBUG Aggregator:29 - Start aggregating data from /Users/munca/akka_tests/log1.txt
+2016-07-17 14:11:55 DEBUG LogFileParser:19 - Start parsing file: /Users/munca/akka_tests/log1.txt
+2016-07-17 14:11:55 DEBUG FileParser:59 - Finished parsing /Users/munca/akka_tests/log1.txt. Cleanup
+2016-07-17 14:11:55 DEBUG FileParser:59 - Finished parsing /Users/munca/akka_tests/log2.txt. Cleanup
+2016-07-17 14:11:55 DEBUG Aggregator:37 - Final data from /Users/munca/akka_tests/log1.txt: 5 lines
+2016-07-17 14:11:55 DEBUG LogFileParser:29 - Finished parsing /Users/munca/akka_tests/log2.txt
+2016-07-17 14:11:55 DEBUG LogFileParser:29 - Finished parsing /Users/munca/akka_tests/log1.txt
+2016-07-17 14:11:55 DEBUG FileScanner:37 - Removed Actor[akka://LogProcessor/user/fileScanner/$a#1268813911] from monitor
+2016-07-17 14:11:55 DEBUG Aggregator:37 - Final data from /Users/munca/akka_tests/log2.txt: 7 lines
+2016-07-17 14:11:55 DEBUG FileScanner:37 - Removed Actor[akka://LogProcessor/user/fileScanner/$b#583438089] from monitor
+2016-07-17 14:11:55 DEBUG FileScanner:42 - Cleanup...
+2016-07-17 14:13:31 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:15:13 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:16:18 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:16:35 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:18:07 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:19:09 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:19:31 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:19:54 INFO  LogProcessor:19 - Parsing log files
+2016-07-17 14:23:34 INFO  LogProcessor:21 - Parsing log files
