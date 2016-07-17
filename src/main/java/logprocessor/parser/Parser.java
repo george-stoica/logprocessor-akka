@@ -1,7 +1,5 @@
 package logprocessor.parser;
 
-import java.io.File;
-
 /**
  * Created by georgestoica on 15/7/16.
  */

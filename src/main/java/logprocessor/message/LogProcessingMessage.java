@@ -1,25 +1,28 @@
 package logprocessor.message;
 
-import java.io.Serializable;
+import akka.actor.ActorRef;
 
 /**
- * Created by georgestoica on 15/7/16.
+ * Messages passed between actors
  */
 public class LogProcessingMessage {
-    public static class Scan implements Message {
-        private String fileName;
+    // File Parsing Messages
 
-        public Scan(String fileName) {
-            this.fileName = fileName;
+    public static class Scan implements Message {
+        private String dirName;
+
+        public Scan(String dirName) {
+            this.dirName = dirName;
         }
 
-        public String getFileName() {
-            return fileName;
+        public String getDirName() {
+            return dirName;
         }
     }
 
     public static class Parse implements Message {
         private String fileName;
+
         public Parse(String fileName) {
             this.fileName = fileName;
         }
@@ -61,6 +64,7 @@ public class LogProcessingMessage {
 
     public static class Line implements Message {
         private String fileName;
+
         public Line(String fileName) {
             this.fileName = fileName;
         }
@@ -69,14 +73,42 @@ public class LogProcessingMessage {
             return fileName;
         }
     }
+
     public static class EndOfFile implements Message {
         private String fileName;
+
         public EndOfFile(String fileName) {
             this.fileName = fileName;
         }
 
         public String getFileName() {
             return fileName;
+        }
+    }
+
+    // Actor status messages
+
+    public static class MonitorOperation implements Message {
+        private ActorRef ref;
+
+        public MonitorOperation(ActorRef ref) {
+            this.ref = ref;
+        }
+
+        public ActorRef getRef() {
+            return ref;
+        }
+    }
+
+    public static class StoppedOperation implements Message {
+        private ActorRef ref;
+
+        public StoppedOperation(ActorRef ref) {
+            this.ref = ref;
+        }
+
+        public ActorRef getRef() {
+            return ref;
         }
     }
 }

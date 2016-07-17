@@ -1,7 +1,7 @@
 package logprocessor.parser;
 
 /**
- * Created by georgestoica on 15/7/16.
+ * File parsing events
  */
 public enum ParseEvent {
     START, LINE, EOF
