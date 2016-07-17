@@ -18,6 +18,12 @@ public class LogProcessor {
     public static void main(String[] args) {
         logger.info("Parsing log files");
 
+        String logFileDir = "./logs";
+
+        if(args.length > 1) {
+            logFileDir = args[1];
+        }
+
         logger.debug("creating actor system...");
         final ActorSystem system = ActorSystem.create("LogProcessor");
 

@@ -1,6 +1,8 @@
 package logprocessor.service;
 
-import akka.actor.*;
+import akka.actor.AbstractActor;
+import akka.actor.ActorSelection;
+import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import logprocessor.message.LogProcessingMessage;
 import logprocessor.message.Message;
@@ -17,7 +19,7 @@ import scala.runtime.BoxedUnit;
 public class FileParser extends AbstractActor {
     private final static Logger logger = Logger.getLogger(FileParser.class);
 
-    private ActorRef aggregator;
+    private ActorSelection aggregator;
     private ActorSelection monitor;
     private Parser parser;
     private String fileToParse;
@@ -30,9 +32,9 @@ public class FileParser extends AbstractActor {
         this.parser = parser;
         this.fileToParse = fileToParse;
 
-//        ActorSelection aggregator = context().actorSelection("/user/aggregator");
-//        aggregator.tell(new Identify(1), null);
+        aggregator = context().actorSelection("/user/aggregator");
 
+        // register this actor with the system monitor
         monitor = context().actorSelection("/user/monitor");
         monitor.tell(new LogProcessingMessage.MonitorOperation(self()), self());
     }
@@ -50,26 +52,16 @@ public class FileParser extends AbstractActor {
                         Message parseEventMessage = mapEvent(fileName, parseEvent);
 
                         // send data to aggregator
-                        ActorSelection aggregator = context().actorSelection("/user/aggregator");
-
-                        // check if aggregator exists
-                        //                aggregator.tell(new Identify());
-
-                        //                ActorRef aggregator = context().actorOf(Aggregator.props(), "aggregator");
                         aggregator.tell(parseEventMessage, self());
 
                         // shut down actor
                         if (parseEvent == ParseEvent.EOF) {
                             logger.debug("Finished parsing " + message.getFileName() + ". Cleanup");
-//                            ActorSelection monitor = context().actorSelection("/user/monitor");
                             monitor.tell(new LogProcessingMessage.StoppedOperation(self()), self());
                             context().stop(self());
                         }
                     });
 
-                })
-                .match(ActorIdentity.class, actorIdentity -> {
-                    this.aggregator = actorIdentity.getRef();
                 })
                 .build();
     }

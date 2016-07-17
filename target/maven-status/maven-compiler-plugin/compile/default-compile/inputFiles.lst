@@ -1,0 +1,12 @@
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/parser/Parser.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/LogProcessor.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/parser/ParseEvent.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/service/FileScanner.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/service/Aggregator.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/service/monitor/Monitor.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/service/FileParser.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/service/monitor/LogFileParserMonitor.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/message/LogProcessingMessage.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/message/Message.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/parser/LogFileParser.java
+/Users/munca/dev/java_projects/logprocessor-akka/src/main/java/logprocessor/parser/ParseEventListener.java

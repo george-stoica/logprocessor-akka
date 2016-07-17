@@ -33,7 +33,7 @@ public class FileScanner extends AbstractActor {
 
             for (String fileToParse : filesToParse) {
                 // create a Parser Actor
-                ActorRef fileParser = context().actorOf(FileParser.props(fileToParse), "fileParser");
+                ActorRef fileParser = context().actorOf(FileParser.props(fileToParse));
 
                 // prepare message
                 Message parseFileMessage = new LogProcessingMessage.Parse(message.getDirName() + '/' + fileToParse);
