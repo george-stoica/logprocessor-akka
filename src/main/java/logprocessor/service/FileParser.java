@@ -55,7 +55,7 @@ public class FileParser extends AbstractActor {
                         aggregator.tell(parseEventMessage, self());
 
                         // shut down actor
-                        if (parseEvent == ParseEvent.EOF) {
+                        if (parseEvent == ParseEvent.EOF || parseEvent == ParseEvent.ERROR) {
                             logger.debug("Finished parsing " + message.getFileName() + ". Cleanup");
                             monitor.tell(new LogProcessingMessage.StoppedOperation(self()), self());
                             context().stop(self());

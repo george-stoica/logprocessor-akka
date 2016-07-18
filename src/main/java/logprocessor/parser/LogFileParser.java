@@ -22,6 +22,7 @@ public class LogFileParser implements Parser {
             stream.forEach(line -> eventListener.fireEvent(fileName, ParseEvent.LINE));
         } catch (IOException e) {
             logger.error("PARSE ERROR: Error parsing " + fileName);
+            eventListener.fireEvent(fileName, ParseEvent.ERROR);
         }
 
         eventListener.fireEvent(fileName, ParseEvent.EOF);

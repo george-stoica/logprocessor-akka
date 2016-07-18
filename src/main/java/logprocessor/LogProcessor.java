@@ -18,19 +18,19 @@ public class LogProcessor {
     private final static Logger logger = Logger.getLogger(LogProcessor.class);
 
     public static void main(String[] args) {
-        logger.info("Parsing log files");
-
         String logFileDir = "./logs";
 
         if(args.length > 0) {
             logFileDir = args[0];
         }
 
-        // exit with error if direcotry does not exist
+        // exit with error if directory does not exist
         if(!(new File(logFileDir).exists())) {
-            System.out.println("Log file dorectory does not exist");
+            System.out.println("Log file directory does not exist");
             System.exit(1);
         }
+
+        logger.info("Parsing log files");
 
         logger.debug("creating actor system...");
         final ActorSystem system = ActorSystem.create("LogProcessor");

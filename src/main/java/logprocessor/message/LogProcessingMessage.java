@@ -86,6 +86,18 @@ public class LogProcessingMessage {
         }
     }
 
+    public static class ParseError implements Message {
+        private String fileName;
+
+        public ParseError(String fileName) {
+            this.fileName = fileName;
+        }
+
+        public String getFileName() {
+            return fileName;
+        }
+    }
+
     // Actor status messages
 
     public static class MonitorOperation implements Message {
